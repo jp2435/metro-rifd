@@ -133,7 +133,7 @@ void RFIDCard(int opcao){
   switch(opcao){
     case 1:
       // Validar titulo
-      Veri = !VerificarRegistro(opcao);
+      Veri = !VerificarRegisto(opcao);
       if(Veri){
         // Código Verificação Incorreto
         Serial.println(F("Não validado"));
@@ -153,7 +153,7 @@ void RFIDCard(int opcao){
       break;
     case 2:
       // Adicionar titulos
-      VerificarRegistro(opcao);
+      VerificarRegisto(opcao);
       AdicionarTitulos();
       break;
     default:
@@ -198,7 +198,7 @@ void EscreverVerificacao(byte block){
 /*
  * Função para verificar se o cartão está registro dentro da aplicação
 */
-bool VerificarRegistro(int opcao){
+bool VerificarRegisto(int opcao){
   bool Checker = true;
   /*
    * Código de verificação:
